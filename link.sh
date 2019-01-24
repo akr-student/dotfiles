@@ -1,6 +1,14 @@
 #!/bin/bash
 
 set -u
+# 実行場所のディレクトリを取得
+THIS_DIR=$(cd $(dirname $0); pwd)
+
+cd $THIS_DIR
+git submodule init
+git submodule update
+
+
 DOT_DIRECTORY="${HOME}/dotfiles"
 DOT_CONFIG_DIRECTORY=".config"
 
@@ -10,7 +18,6 @@ for f in .??*
 do
     #無視したいファイルやディレクトリ
     [ "$f" = ".git" ] && continue
-    [ "$f" = ".config" ] && continue
     ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
 done
 
