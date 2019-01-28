@@ -28,10 +28,4 @@ for file in `\find . -maxdepth 8 -type f`; do
     ln -snfv ${DOT_DIRECTORY}/${DOT_CONFIG_DIRECTORY}/${file:2} ${HOME}/${DOT_CONFIG_DIRECTORY}/${file:2}
 done
 
-
-echo "/usr/local/bin/zsh" >> /etc/shells
-
-echo "add to shells"
-
-
 echo "linked dotfiles complete!"

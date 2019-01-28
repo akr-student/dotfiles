@@ -1,7 +1,6 @@
 #!/bin/bash
+
 set -euo pipefail
- 
-source lib/echos.sh
  
 function command_exists() {
   type "$1" &> /dev/null ;
@@ -12,7 +11,7 @@ function command_exists() {
     info "installing brew..."
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   else
-    warn "brew is already installed"
+    echo "brew is already installed"
   fi
 }
  
@@ -24,8 +23,20 @@ function command_exists() {
     sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells'
     chsh -s $(brew --prefix)/bin/zsh
   else
-    warn "zsh is already installed"
+    echo "zsh is already installed"
   fi
+}
+
+: "install other packages by brew" && {
+  packages=( peco tree wget  )
+  for package in ${packages[@]}; do
+    if ! brew list | grep $package &> /dev/null; then
+      info "installing ${package}..."
+      brew install ${package}
+    else
+      echo "${package} is already installed"
+    fi
+  done
 }
 
 : "install zplug" && {
@@ -34,7 +45,7 @@ function command_exists() {
     info "installing zplug..."
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
   else
-    warn "zplug is already installed"
+    echo "zplug is already installed"
   fi
 }
  
