@@ -1,10 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-if [[ ! -d ~/.zplug ]];then
-  git clone https://github.com/zplug/zplug ~/.zplug
-fi
 
-source ~/.zplug/init.zsh
+source $HOME/.zplug/init.zsh
+
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
@@ -29,13 +27,7 @@ zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
 zplug "mollifier/anyframe"
 
 # ディレクトリ移動を高速化（fzf であいまい検索）
-zplug "b4b4r07/enhancd", use:init.sh
-
-if [[ ! -d ~/enhancd ]];then
-  git clone https://github.com/b4b4r07/enhancd 
-fi
-source ~/enhancd/init.sh
-
+zplug "b4b4r07/enhancd", use:"init.sh"
 zplug load
 
 
