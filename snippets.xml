@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<folders>
+	<folder>
+		<title>コミットテンプレート</title>
+		<snippets>
+			<snippet>
+				<title>バグ修正</title>
+				<content>:bug:</content>
+			</snippet>
+			<snippet>
+				<title>機能改善</title>
+				<content>:+1:</content>
+			</snippet>
+			<snippet>
+				<title>部分的な機能追加</title>
+				<content>:sparkles:</content>
+			</snippet>
+			<snippet>
+				<title>初コミット・(祝)機能追加</title>
+				<content>:tada:</content>
+			</snippet>
+			<snippet>
+				<title>リファクタリング</title>
+				<content>:recycle:</content>
+			</snippet>
+			<snippet>
+				<title>不要な機能の削除</title>
+				<content>:wastebasket:</content>
+			</snippet>
+			<snippet>
+				<title>テストやCIの修正・改善</title>
+				<content>:green_heart: </content>
+			</snippet>
+			<snippet>
+				<title>Lintエラーの修正やコードスタイルの修正</title>
+				<content> :shirt:</content>
+			</snippet>
+			<snippet>
+				<title>パフォーマンス改善</title>
+				<content>:rocket: </content>
+			</snippet>
+			<snippet>
+				<title>依存パッケージなどのアップデート</title>
+				<content>:up: </content>
+			</snippet>
+			<snippet>
+				<title>新機能の公開範囲の制限</title>
+				<content>:lock:</content>
+			</snippet>
+			<snippet>
+				<title>セキュリティ関連の改善</title>
+				<content>:cop: </content>
+			</snippet>
+			<snippet>
+				<title> デザインUI/UXの変更・追加</title>
+				<content>:art:</content>
+			</snippet>
+			<snippet>
+				<title> 非推奨追加(クソコード注意)</title>
+				<content>:hankey:</content>
+			</snippet>
+		</snippets>
+	</folder>
+</folders>
