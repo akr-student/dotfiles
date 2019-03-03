@@ -7,15 +7,15 @@ function command_exists() {
   type "$1" &> /dev/null ;
 }
  
-#: "install brew" && {
-#  if ! command_exists brew; then
-#    info "installing brew..."
-#    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-#    echo "installed brew "
-#  else
-#    echo "brew is already installed"
-#  fi
-#}
+: "install brew" && {
+  if ! command_exists brew; then
+    info "installing brew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "installed brew "
+  else
+    echo "brew is already installed"
+  fi
+}
 
 : "install zsh by brew" && {
   BREW_ZSH_PATH="/usr/local/bin/zsh"
