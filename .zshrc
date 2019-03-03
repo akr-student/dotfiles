@@ -3,6 +3,9 @@
 
 alias sa="source $PYENV_ROOT/versions/anaconda3-4.2.0/bin/activate"
 alias la="lah"
+
+autoload -U promptinit; promptinit
+#
 zstyle ':completion:*' menu select
 # 補完候補一覧をカラー表示
 zstyle ':completion:*' list-colors ''
@@ -166,3 +169,10 @@ plugins=(
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+ brew() {
+  if [ "$1" = update ]; then
+    shift
+    set -- update -v "$@"
+  fi
+  command brew "$@"
+}

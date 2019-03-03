@@ -10,3 +10,10 @@ do
     source ${DOT_DIRECTORY}/${f}
 done
 
+brew() {
+  if [ "$1" = update ]; then
+    shift
+    set -- update -v "$@"
+  fi
+  command brew "$@"
+}
