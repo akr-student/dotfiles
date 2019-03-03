@@ -4,6 +4,9 @@ How to install
 
 - install.sh
 
+require
+- nodebrew
+
 Try to change colorscheme in iTerm2
 - Iceberg-iTerm2
 url:https://github.com/Arc0re/Iceberg-iTerm2.git

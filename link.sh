@@ -5,11 +5,8 @@ set -u
 THIS_DIR=$(cd $(dirname $0); pwd)
 
 cd $THIS_DIR
-echo "ok 1"
 git submodule init
-echo "ok 2"
 git submodule update
-echo "ok 3"
 
 
 DOT_DIRECTORY="${HOME}/dotfiles"
@@ -24,11 +21,11 @@ do
     ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
 done
 
-echo "link .config directory dotfiles"
-cd ${DOT_DIRECTORY}/${DOT_CONFIG_DIRECTORY}
-for file in `\find . -maxdepth 8 -type f`; do
-./の2文字を削除するためにfile:2としている
-    ln -snfv ${DOT_DIRECTORY}/${DOT_CONFIG_DIRECTORY}/${file:2} ${HOME}/${DOT_CONFIG_DIRECTORY}/${file:2}
-done
+#echo "link .config directory dotfiles"
+#cd ${DOT_DIRECTORY}\${DOT_CONFIG_DIRECTORY}
+#for file in `\find . -maxdepth 8 -type f`; do
+#./の2文字を削除するためにfile:2としている
+#    ln -snfv ${DOT_DIRECTORY}\${DOT_CONFIG_DIRECTORY}\${file:2} ${HOME}\${DOT_CONFIG_DIRECTORY}\${file:2}
+#done
 
 echo "linked dotfiles complete!"

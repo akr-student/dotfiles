@@ -7,6 +7,7 @@ set showmatch
 set whichwrap=b,s,h,l,<,>,[,]
 set scrolloff=8 "上下8行で視野確保"
 
+set shellslash
 set hlsearch
 set incsearch
 set ignorecase "大文字小文字の区別なしで検索"
@@ -54,15 +55,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/noguchi/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/dotfiles/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/noguchi/.cache/dein')
-  call dein#begin('/Users/noguchi/.cache/dein')
+if dein#load_state(expand('~/dotfiles/.cache/dein'))
+  call dein#begin(expand('~/dotfiles/.cache/dein'))
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/noguchi/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/dotfiles/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   call dein#add('Shougo/neosnippet.vim')

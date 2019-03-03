@@ -30,7 +30,7 @@ function command_exists() {
 }
 
 : "install other packages by brew" && {
-  packages=( peco tree wget  )
+  packages=( peco tree wget )
   for package in ${packages[@]}; do
     if ! brew list | grep $package &> /dev/null; then
       #info "installing ${package}..."
@@ -53,5 +53,32 @@ function command_exists() {
     echo "zplug is already installed"
   fi
 }
- 
+
+: "clone dein" && {
+  DEIN_DIR=$HOME/dotfile/.cache/dein/repos/github.com/Shougo/dein.vim
+  if [ ! -e $ZPLUG_DIR ]; then
+    echo "make dir for dein"
+    mkdir -p DEIN_DIR
+    git clone git@github.com:Shougo/dein.vim.git DEIN_DIR
+    echo "cloned dein "
+  else
+    echo "dein is already cloned"
+  fi
+}
+
+: "install other packages by brew" && {
+  packages=( nodebrew )
+  for package in ${packages[@]}; do
+    if ! brew list | grep $package &> /dev/null; then
+      #info "installing ${package}..."
+      brew install ${package}
+      echo "installed ${package}"
+      source .zshrc
+    else
+      echo "${package} is already installed"
+    fi
+  done
+}
+
+
 echo "Set Complete!"

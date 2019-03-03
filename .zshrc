@@ -3,8 +3,11 @@
 
 alias sa="source $PYENV_ROOT/versions/anaconda3-4.2.0/bin/activate"
 alias la="lah"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$HOME/dotfiles/.nodebrew/current/bin:$PATH
 
 autoload -U promptinit; promptinit
+prompt pure
 #
 zstyle ':completion:*' menu select
 # 補完候補一覧をカラー表示
@@ -12,7 +15,6 @@ zstyle ':completion:*' list-colors ''
 
 # cd - [tab]でcd履歴が見れる
 setopt auto_pushd
-
 
 source $HOME/.zplug/init.zsh
 
