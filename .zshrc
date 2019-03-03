@@ -1,6 +1,16 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+alias sa="source $PYENV_ROOT/versions/anaconda3-4.2.0/bin/activate"
+alias la="lah"
+zstyle ':completion:*' menu select
+# 補完候補一覧をカラー表示
+zstyle ':completion:*' list-colors ''
+
+# cd - [tab]でcd履歴が見れる
+setopt auto_pushd
+
+
 source $HOME/.zplug/init.zsh
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
@@ -29,6 +39,40 @@ zplug "mollifier/anyframe"
 # ディレクトリ移動を高速化（fzf であいまい検索）
 zplug "b4b4r07/enhancd", use:"init.sh"
 zplug load
+
+# 単純なshellの機能を強化
+# 補完機能
+autoload -U compinit
+compinit
+
+# 履歴ファイルの保存先
+export HISTFILE=${HOME}/.zhistory
+# メモリに保存される履歴の件数
+export HISTSIZE=1000
+# 履歴ファイルに保存される履歴の件数
+export SAVEHIST=100000
+# 重複を記録しない
+setopt hist_ignore_dups
+# 開始と終了を記録
+setopt EXTENDED_HISTORY
+# historyを共有
+setopt share_history
+# ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
+setopt hist_ignore_all_dups
+# スペースで始まるコマンド行はヒストリリストから削除
+setopt hist_ignore_space
+# ヒストリを呼び出してから実行する間に一旦編集可能
+setopt hist_verify
+# 余分な空白は詰めて記録
+setopt hist_reduce_blanks
+# 古いコマンドと同じものは無視
+setopt hist_save_no_dups
+# historyコマンドは履歴に登録しない
+setopt hist_no_store
+# 補完時にヒストリを自動的に展開
+setopt hist_expand
+# 履歴をインクリメンタルに追加
+setopt inc_append_history
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -95,8 +139,8 @@ plugins=(
 #source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+#export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
