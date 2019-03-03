@@ -55,11 +55,14 @@ function command_exists() {
 }
 
 : "clone dein" && {
-  DEIN_DIR=$HOME/dotfile/.cache/dein/repos/github.com/Shougo/dein.vim
-  if [ ! -e $ZPLUG_DIR ]; then
+  DEIN_DIR=$HOME/dotfiles/.cache/dein
+  if [ ! -e $DEIN_DIR ]; then
     echo "make dir for dein"
-    mkdir -p DEIN_DIR
-    git clone git@github.com:Shougo/dein.vim.git $DEIN_DIR
+    echo "$DEIN_DIR"
+    mkdir -p $DEIN_DIR
+    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+    # For example, we just use `~/.cache/dein` as installation directory
+    sh ./installer.sh $HOME/dotfiles/.cache/dein
     echo "cloned dein "
   else
     echo "dein is already cloned"
