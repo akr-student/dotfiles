@@ -5,8 +5,9 @@ set -u
 THIS_DIR=$(cd $(dirname $0); pwd)
 
 cd $THIS_DIR
-git submodule init
-git submodule update
+echo "THIS DIR = ${THIS_DIR}"
+#git submodule init
+#git submodule update
 
 
 DOT_DIRECTORY="${HOME}/dotfiles"

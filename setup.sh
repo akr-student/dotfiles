@@ -59,7 +59,7 @@ function command_exists() {
   if [ ! -e $ZPLUG_DIR ]; then
     echo "make dir for dein"
     mkdir -p DEIN_DIR
-    git clone git@github.com:Shougo/dein.vim.git DEIN_DIR
+    git clone git@github.com:Shougo/dein.vim.git $DEIN_DIR
     echo "cloned dein "
   else
     echo "dein is already cloned"
