@@ -55,15 +55,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/noguchi/dotfiles/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/noguchi/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/noguchi/dotfiles/.cache/dein')
-  call dein#begin('/Users/noguchi/dotfiles/.cache/dein')
+if dein#load_state('/Users/noguchi/.cache/dein')
+  call dein#begin('/Users/noguchi/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/noguchi/dotfiles/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/noguchi/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   call dein#add('Shougo/neosnippet.vim')
@@ -88,7 +88,6 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
-
 
 "colorscheme設定
 syntax enable

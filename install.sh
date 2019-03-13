@@ -2,7 +2,7 @@ sh setup.sh
 sh link.sh
 
 # .git/は無視されているがcommit_templateは共有
-git config --global commit.template .commit_template
+git config --global commit.template ~/.commit_template
 
 #node.js
 nodebrew setup
@@ -15,3 +15,4 @@ npm -v
 npm install --global pure-prompt
 
 echo "All complete"
+echo "but npm install pureを確認してみて"
