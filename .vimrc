@@ -15,14 +15,16 @@ set smartcase "大文字小文字委混合は区別して検索"
 
 set expandtab
 set tabstop=4
-set shiftwidth=2  "自動でインデントでずれる幅"
+set shiftwidth=4  "自動でインデントでずれる幅"
 set softtabstop=0
 set autoindent "改行時に前のインデントを継続する"
 set smartindent
 
-set clipboard=unnamed,unnamedplus
+set clipboard+=unnamed
 set mouse=a
 set shellslash
+let g:syntastic_python_checkers = ['pyflakes', 'pep8', 'pylint']
+set backspace=indent,eol,start
 
 set wildmenu wildmode=list:longest,full "コマンドラインモードでTAB補完"
 set history=10000
@@ -34,6 +36,9 @@ endfor
 noremap <S-h> ^
 noremap <S-l> $
 nnoremap == gg=G''
+
+command Tree NERDTree
+nnoremap ss :<C-u>sp<CR>
 
 "ペースト設定
 if &term =~ "xterm"
@@ -71,7 +76,11 @@ if dein#load_state('/Users/noguchi/.cache/dein')
   call dein#add('cocopon/iceberg.vim')
   call dein#add('itchyny/lightline.vim')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/syntastic')
   call dein#add('tomtom/tcomment_vim')
+  call dein#add('Yggdroot/indentLine')
+  call dein#add('jiangmiao/auto-pairs')
+  call dein#add('tpope/vim-fugitive')
 
   " Required:
   call dein#end()
