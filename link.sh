@@ -18,7 +18,8 @@ cd ${DOT_DIRECTORY}
 for f in .??*
 do
     #無視したいファイルやディレクトリ
-    [ "$f" = ".git" ] && continue
+    [ [ "$f" = ".git" ]] && continue
+    [ [ "$f" = ".cache" ]] && continue
     ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
 done
 

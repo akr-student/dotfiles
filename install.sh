@@ -15,3 +15,4 @@ npm -v
 npm install --global pure-prompt
 
 echo "All complete"
+echo "but npm install pureを確認してみて"

@@ -15,14 +15,16 @@ set smartcase "大文字小文字委混合は区別して検索"
 
 set expandtab
 set tabstop=4
-set shiftwidth=2  "自動でインデントでずれる幅"
+set shiftwidth=4  "自動でインデントでずれる幅"
 set softtabstop=0
 set autoindent "改行時に前のインデントを継続する"
 set smartindent
 
-set clipboard=unnamed,unnamedplus
+set clipboard+=unnamed
 set mouse=a
 set shellslash
+let g:syntastic_python_checkers = ['pyflakes', 'pep8', 'pylint']
+set backspace=indent,eol,start
 
 set wildmenu wildmode=list:longest,full "コマンドラインモードでTAB補完"
 set history=10000
@@ -34,6 +36,19 @@ endfor
 noremap <S-h> ^
 noremap <S-l> $
 nnoremap == gg=G''
+
+command Tree NERDTree
+nnoremap ss :<C-u>sp<CR>
+
+"fugitive
+nnoremap [fugitive]  <Nop>
+nmap <space>g [fugitive]
+nnoremap <silent> [fugitive]s :Gstatus<CR><C-w>T
+nnoremap <silent> [fugitive]a :Gwrite<CR>
+nnoremap <silent> [fugitive]c :Gcommit-v<CR>
+nnoremap <silent> [fugitive]b :Gblame<CR>
+nnoremap <silent> [fugitive]d :Gdiff<CR>
+nnoremap <silent> [fugitive]m :Gmerge<CR>
 
 "ペースト設定
 if &term =~ "xterm"
@@ -55,15 +70,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/noguchi/dotfiles/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/noguchi/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/noguchi/dotfiles/.cache/dein')
-  call dein#begin('/Users/noguchi/dotfiles/.cache/dein')
+if dein#load_state('/Users/noguchi/.cache/dein')
+  call dein#begin('/Users/noguchi/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/noguchi/dotfiles/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/noguchi/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   call dein#add('Shougo/neosnippet.vim')
@@ -71,7 +86,11 @@ if dein#load_state('/Users/noguchi/dotfiles/.cache/dein')
   call dein#add('cocopon/iceberg.vim')
   call dein#add('itchyny/lightline.vim')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/syntastic')
   call dein#add('tomtom/tcomment_vim')
+  call dein#add('Yggdroot/indentLine')
+  call dein#add('jiangmiao/auto-pairs')
+  call dein#add('tpope/vim-fugitive')
 
   " Required:
   call dein#end()
@@ -88,7 +107,6 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
-
 
 "colorscheme設定
 syntax enable
