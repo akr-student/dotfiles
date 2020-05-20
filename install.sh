@@ -2,7 +2,7 @@ sh setup.sh
 sh link.sh
 
 # .git/は無視されているがcommit_templateは共有
-git config --global commit.template .commit_template
+git config --global commit.template ~/dotfiles/.commit_template
 
 #node.js
 nodebrew setup
